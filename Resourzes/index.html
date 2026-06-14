@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║           CURATED RESOURCE HUB — index.html                 ║
+  ║  © 2025 Resource Hub. All rights reserved.                  ║
+  ║  Unauthorised reproduction or redistribution is prohibited. ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A curated, hand-picked directory of useful PC apps, browser extensions, websites, and things to avoid — all in one clean place." />
+    <meta name="author" content="Resource Hub" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Curated Resource Hub" />
+    <meta property="og:description" content="Hand-picked PC apps, browser extensions, useful sites, and things to avoid." />
+    <meta property="og:type" content="website" />
+
+    <title>Curated Resource Hub</title>
+
+    <!-- Google Fonts: Inter (clean UI) + JetBrains Mono (code/labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- ╔══════════════╗ -->
+    <!-- ║    HEADER    ║ -->
+    <!-- ╚══════════════╝ -->
+    <header class="site-header" role="banner">
+      <div class="container">
+        <div class="header-inner">
+
+          <div class="header-brand">
+            <span class="header-eyebrow" aria-hidden="true">curated.resources</span>
+            <h1 class="header-title">Resource Hub</h1>
+            <p class="header-subtitle">
+              A hand-picked directory of apps, extensions, and sites —
+              maintained for the community, free to use.
+            </p>
+          </div>
+
+          <div class="header-stats" aria-label="Directory statistics">
+            <div class="stat-item">
+              <span class="stat-number" id="stat-total">—</span>
+              <span class="stat-label">Resources</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number" id="stat-cats">4</span>
+              <span class="stat-label">Categories</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">Free</span>
+              <span class="stat-label">Always</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ╔══════════════╗ -->
+    <!-- ║     MAIN     ║ -->
+    <!-- ╚══════════════╝ -->
+    <main id="main-content" role="main">
+      <div class="container">
+
+        <!-- ── TOOLBAR: Search + Filters ── -->
+        <div class="toolbar" role="search">
+
+          <!-- Search -->
+          <div class="search-wrapper">
+            <svg class="search-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            <label for="search-input" class="sr-only">Search resources</label>
+            <input
+              type="search"
+              id="search-input"
+              class="search-input"
+              placeholder="Search anything — apps, sites, keywords…"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search resources"
+              aria-controls="resource-grid"
+            />
+            <kbd class="search-hint" aria-hidden="true">/</kbd>
+            <button
+              class="search-clear"
+              id="search-clear"
+              type="button"
+              aria-label="Clear search"
+              hidden
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Category filters -->
+          <nav class="filter-nav" aria-label="Filter by category">
+            <ul class="filter-list" role="list">
+              <li>
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">
+                  All
+                </button>
+              </li>
+              <li>
+                <button class="filter-btn" data-filter="pc-applications" aria-pressed="false">
+                  <svg class="btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                  PC Apps
+                </button>
+              </li>
+              <li>
+                <button class="filter-btn" data-filter="browser-extensions" aria-pressed="false">
+                  <svg class="btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                  Extensions
+                </button>
+              </li>
+              <li>
+                <button class="filter-btn" data-filter="useful-sites" aria-pressed="false">
+                  <svg class="btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  Useful Sites
+                </button>
+              </li>
+              <li>
+                <button class="filter-btn filter-btn--danger" data-filter="things-to-avoid" aria-pressed="false">
+                  <svg class="btn-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                  Avoid
+                </button>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+
+        <!-- ── RESULTS META ── -->
+        <div class="results-meta" aria-live="polite" aria-atomic="true">
+          <span id="results-count" class="results-count"></span>
+        </div>
+
+        <!-- ── RESOURCE GRID ── -->
+        <section
+          id="resource-grid"
+          class="resource-grid"
+          aria-label="Resource cards"
+          role="list"
+        >
+          <!-- Populated by app.js -->
+        </section>
+
+        <!-- ── EMPTY STATE ── -->
+        <div id="empty-state" class="empty-state" hidden role="status" aria-live="polite">
+          <div class="empty-icon" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M8 11h6"/></svg>
+          </div>
+          <p class="empty-title">No results found</p>
+          <p class="empty-sub">Try a different keyword or reset the filter.</p>
+        </div>
+
+      </div><!-- /.container -->
+    </main>
+
+    <!-- ╔══════════════╗ -->
+    <!-- ║    FOOTER    ║ -->
+    <!-- ╚══════════════╝ -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-inner">
+          <p class="footer-copy">
+            &copy; <span id="footer-year"></span> Resource Hub. All rights reserved.
+          </p>
+          <p class="footer-note">
+            For educational and personal use. This site does not host or distribute any content.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
